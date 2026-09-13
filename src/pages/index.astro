@@ -32,8 +32,8 @@ interface CardJorneyItem {
 
 const projects: CardItem[] = [
 	{
-		name: 'TroveBazaar',
-		description: 'POS y CRM para tiendas de segunda mano con varias sucursales.\nManeja inventario por unidad unica, corte de caja y clientes recurrentes.',
+		name: 'TroveBazaar | Demo SAAS',
+		description: 'POS y CRM para tiendas de segunda mano con varias sucursales. Maneja inventario por unidad única, corte de caja y clientes recurrentes. Proyecto demo para SAAS este proyecto aun se encuentra en desarrollo.',
 		items: ['React', 'TanStack Query', 'Tailwind', 'Typescript', 'Java', 'Spring Boot', 'PostgreSQL'],
 		link: {
 			url: '#',
@@ -47,24 +47,6 @@ const projects: CardItem[] = [
 		link: {
 			url: 'https://github.com/rey0x-dev/ltc-bandidos-bot-telegram',
 			type: '_blank'
-		}
-	},
-	{
-		name: 'Workspace ERP | Solucem',
-		description: 'ERP para empresa de renta de plantas de energía. Cubre el sitio completo: Cotización, actividades, mantenimientos, seguimiento de flotilla y reportes.',
-		items: ['Vue', 'NestJS', 'Graphql', 'PostgreSQL', 'Prisma', 'Bun'],
-		link: {
-			url: '',
-			type: 'self'
-		}
-	},
-	{
-		name: 'Oficina Redecom ERP | Redecom',
-		description: 'ERP interno para una empresa de telecomunicaciones, usado por 200+ personas. Modulos como cadena de suministros, catalogo de equipos, levantamientos, proyectos, RRHH, clientes, etc.',
-		items: ['Vue', 'Vitest', 'NestJS', 'GraphQL', 'MongoDB', 'Mongoose'],
-		link: {
-			url: '',
-			type: 'self'
 		}
 	}
 ]
@@ -86,14 +68,6 @@ const aports: CardItem[] = [
 			type: 'self'
 		}
 	},
-	{
-		name: 'Vue | Libreria de componentes',
-		description: 'Componentes reutilizables para Vue.js, optimizados para rendimiento y accesibilidad.',
-		link: {
-			url: '',
-			type: 'self'
-		}
-	}
 ]
 
 const journey: CardJorneyItem[] = [
@@ -134,29 +108,46 @@ const journey: CardJorneyItem[] = [
 		</div>
 	
 		<div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.6rem', gap: '1rem' }}>
-			<p>Soy Rey, Ingeniero en Computación por el{' '}<a
+			<p>Soy Rey, Ingeniero en Computación por el{' '}
+			<a
 			href="https://www.ipn.mx"
 			target="_blank"
 			style={{
 				fontWeight: 'bold',
-				boxShadow: '0 5px 0 #9e4167',
+				boxShadow: '0 5px 0 #C0849C',
 				textDecoration: 'none',
 				color: 'inherit',
-				':hover': {
-					boxShadow: '0 5px 0 #7a3452',
-				}
 			}}
 		>
 			Instituto Politécnico Nacional
 			</a>
-			{' '}y desarrollador Full Stack enfocado en construir soluciones de software
-			para problemas reales.
+			{' '} y desarrollador Full Stack enfocado en construir soluciones de software
+            para problemas complejos con soluciones prácticas desde cero hasta producción.
 			</p>
 
 			<p>
-				He desarrollado desde sistemas empresariales hasta herramientas y
+				He liderado el desarrollo de sistemas empresariales como un ERP, plataforma de viáticos y aplicación de reportes
+				fotográficos para {' '}
+			<a
+			href="https://redecom.com/"
+			target="_blank"
+			style={{
+				fontWeight: 'bold',
+				boxShadow: '0 5px 0 #E46B7E',
+				textDecoration: 'none',
+				color: 'inherit',
+			}}>Redecom</a>, hasta herramientas y
 				automatizaciones independientes: un ERP vertical para la gestión de renta
-				de plantas de energía (Workspace/Solucem), un POS con inventario y clientes
+				de plantas de energía para {' '}
+			<a
+			href="https://www.solucem.com.mx/"
+			target="_blank"
+			style={{
+				fontWeight: 'bold',
+				boxShadow: '0 5px 0 #88D5B6',
+				textDecoration: 'none',
+				color: 'inherit',
+			}}> Solucem</a>, un POS con inventario y clientes
 				recurrentes (TroveBazaar), y pequeñas automatizaciones para optimizar
 				procesos específicos.
 			</p>
@@ -177,7 +168,7 @@ const journey: CardJorneyItem[] = [
 			))
 		}
 		
-		<p style={{ fontSize: '0.875rem', cursor: 'pointer', textDecoration: 'underline' }}>Ver todos>></p>
+		<!-- <p style={{ fontSize: '0.875rem', cursor: 'pointer', textDecoration: 'underline' }}>Ver todos>></p> -->
 	</ContentLayout>
 
 	<ContentLayout>
