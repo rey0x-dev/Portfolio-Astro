@@ -1,20 +1,20 @@
 # Etapa de construcción
-FROM node:20-alpine AS build-stage
+FROM oven/bun:1-alpine AS build-stage
 
 # Establecer directorio de trabajo
 WORKDIR /app
 
 # Copiar archivos de dependencias
-COPY package*.json ./
+COPY package.json bun.lock ./
 
 # Instalar dependencias
-RUN npm ci
+RUN bun install --frozen-lockfile
 
 # Copiar el resto de los archivos del proyecto
 COPY . .
 
 # Construir la aplicación para producción
-RUN npm run build
+RUN bun run build
 
 # Etapa de producción
 FROM nginx:stable-alpine AS production-stage
