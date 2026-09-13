@@ -1,0 +1,212 @@
+---
+import { Icon } from 'astro-icon/components'
+
+import PageLayout from "../layout/PageLayout.astro"
+import AppButton from '../components/AppButton.astro'
+import AppSubtitle from '../components/AppSubtitle.astro'
+import ContentLayout from "../layout/ContentLayout.astro"
+import AppCard from '../components/AppCard.astro'
+import AppCardJorney from '../components/AppCardJorney.astro'
+
+interface CardItem {
+	name: string;
+	description: string;
+	items?: string[];
+	link: {
+		url: string;
+		type: 'self' | '_blank'
+	}
+}
+
+interface CardJorneyItem {
+	logo: string;
+	title: string;
+	subtitle: string;
+	description: string;
+	items: string[];
+	link: {
+		url: string;
+		type: 'self' | '_blank'
+	}
+}
+
+const projects: CardItem[] = [
+	{
+		name: 'TroveBazaar',
+		description: 'POS y CRM para tiendas de segunda mano con varias sucursales.\nManeja inventario por unidad unica, corte de caja y clientes recurrentes.',
+		items: ['React', 'TanStack Query', 'Tailwind', 'Typescript', 'Java', 'Spring Boot', 'PostgreSQL'],
+		link: {
+			url: '#',
+			type: 'self'
+		}
+	},
+	{
+		name: 'LTC bot Telegram',
+		description: 'Bot en Go que revisa los horarios de juegos de una liga de tocho bandera (flag football) con web scraping. Notifica por Telegram los próximos partidos, cada viernes por la noche.',
+		items: ['Golang', 'Docker', 'Telegram Bot API'],
+		link: {
+			url: 'https://github.com/rey0x-dev/ltc-bandidos-bot-telegram',
+			type: '_blank'
+		}
+	},
+	{
+		name: 'Workspace ERP | Solucem',
+		description: 'ERP para empresa de renta de plantas de energía. Cubre el sitio completo: Cotización, actividades, mantenimientos, seguimiento de flotilla y reportes.',
+		items: ['Vue', 'NestJS', 'Graphql', 'PostgreSQL', 'Prisma', 'Bun'],
+		link: {
+			url: '',
+			type: 'self'
+		}
+	},
+	{
+		name: 'Oficina Redecom ERP | Redecom',
+		description: 'ERP interno para una empresa de telecomunicaciones, usado por 200+ personas. Modulos como cadena de suministros, catalogo de equipos, levantamientos, proyectos, RRHH, clientes, etc.',
+		items: ['Vue', 'Vitest', 'NestJS', 'GraphQL', 'MongoDB', 'Mongoose'],
+		link: {
+			url: '',
+			type: 'self'
+		}
+	}
+]
+
+const aports: CardItem[] = [
+	{
+		name: 'Aprendi Docker montando un servidor de Minecraft con mods',
+		description: 'Volúmenes, redes y capas en un caso donde los errores se ven en segundos; Cargar mods y jugar con amigos nunca había sido tan fácil.',
+		link: {
+			url: '',
+			type: 'self'
+		}
+	},
+	{
+		name: 'Mi VPS se quedo sin recursos, asi que le conecte una computadora por VPN',
+		description: 'Configure una red privada entre mi VPS y la computadora para compartir recursos y optimizar el uso de memoria y procesamiento. Sin IP publica, sin abrir puertos, sin tocar firewall. Solo Tailscale para tratar la maquina detras de CGNAT.',
+		link: {
+			url: '',
+			type: 'self'
+		}
+	},
+	{
+		name: 'Vue | Libreria de componentes',
+		description: 'Componentes reutilizables para Vue.js, optimizados para rendimiento y accesibilidad.',
+		link: {
+			url: '',
+			type: 'self'
+		}
+	}
+]
+
+const journey: CardJorneyItem[] = [
+	{
+		logo: './public/redecom-logo.png',
+		title: 'DESARROLLADOR DE PLATAFORMAS',
+		subtitle: 'Junio 2024 - ahora',
+		description: 'Empresa del sector telecomunicaciones, donde lideré e impulsé el desarrollo de nuevas soluciones tecnológicas para la transformación digital del área operativa y administrativa. Como único responsable del ciclo completo fullstack, propuse e implementé plataformas desde cero, resolviendo de forma autónoma los retos técnicos y de infraestructura que surgieron en el camino.',
+		items: ['Vue', 'React', 'React Native', 'Tailwind', 'NestJS', 'GraphQL', 'Vitest', 'MySQL', 'MongoDB', 'Mongoose', 'Prisma', 'Bun', 'Docker', 'Dokploy', 'Traefik', 'Git Flow', 'CI/CD', 'Linux'],
+		link: {
+			url: '',
+			type: 'self'
+		}
+	},
+	{
+		logo: './public/CD-logo.png',
+		title: 'DESARROLLADOR',
+		subtitle: 'Noviembre 2023 - Abril 2024',
+		description: 'Área de TI enfocada en soporte y desarrollo de soluciones. Participé en la validación de datos durante la migración de Oracle a PostgreSQL, documentación de permisos en SIRE ERP, automatización de cargas de información desde JSON a PostgreSQL y desarrollo de una aplicación web con C# y DevExpress.',
+		items: ['C#', 'Python', 'DevExpress', 'Angular', 'PostgreSQL', 'JSON'],
+		link: {
+			url: '',
+			type: 'self'
+		}
+	}
+]
+---
+
+<PageLayout>
+	<ContentLayout>
+		<div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+			<h1>Rey Martin Quintero Garcia</h1>
+			
+			<div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+				<Icon name="openmoji:flag-mexico" size={22} />
+				<p>México</p>
+			</div>
+		</div>
+	
+		<div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.6rem', gap: '1rem' }}>
+			<p>Soy Rey, Ingeniero en Computación por el{' '}<a
+			href="https://www.ipn.mx"
+			target="_blank"
+			style={{
+				fontWeight: 'bold',
+				boxShadow: '0 5px 0 #9e4167',
+				textDecoration: 'none',
+				color: 'inherit',
+				':hover': {
+					boxShadow: '0 5px 0 #7a3452',
+				}
+			}}
+		>
+			Instituto Politécnico Nacional
+			</a>
+			{' '}y desarrollador Full Stack enfocado en construir soluciones de software
+			para problemas reales.
+			</p>
+
+			<p>
+				He desarrollado desde sistemas empresariales hasta herramientas y
+				automatizaciones independientes: un ERP vertical para la gestión de renta
+				de plantas de energía (Workspace/Solucem), un POS con inventario y clientes
+				recurrentes (TroveBazaar), y pequeñas automatizaciones para optimizar
+				procesos específicos.
+			</p>
+		</div>
+	
+		<div style={{ display: 'flex', gap: '0.5rem' }}>
+			<AppButton label="Github" icon="tabler:brand-github-filled" color="black" href="https://github.com/rey0x-dev" target="_blank" />
+			<AppButton label="LinkedIn" icon="tabler:brand-linkedin-filled" color="black" href="https://www.linkedin.com/in/reyqg/" target="_blank" />
+			<AppButton label="Descargar CV" color="white" href="/cv.pdf" download />
+		</div>
+	</ContentLayout>
+
+	<ContentLayout>
+		<AppSubtitle title="MIS PROYECTOS" />
+		{
+			projects.map((project) => (
+				<AppCard item={project} />
+			))
+		}
+		
+		<p style={{ fontSize: '0.875rem', cursor: 'pointer', textDecoration: 'underline' }}>Ver todos>></p>
+	</ContentLayout>
+
+	<ContentLayout>
+		<AppSubtitle title="APORTES" />
+		
+		{
+			aports.map((aport) => (
+				<AppCard item={aport} />
+			))
+		}
+	</ContentLayout>
+
+	<ContentLayout>
+		<AppSubtitle title="MI TRAYECTORIA" />
+
+		{
+			journey.map((item) => (
+				<AppCardJorney jorney={item} />
+			))
+		}
+
+		
+		<!-- <p>Entré a REDECOM en 2024 como frontend junior realizando algunas páginas estáticas para algunos clientes solo con HTML, CSS y JavaScript.
+		Conforme pasé el tiempo vi algunas deficiencias que tenia la empresa tales como la falta de tecnologias que permitieran automatizar procesos, dar visibilidad a los datos, trabajar con ellos y poderlos tratar de manera colaborativa.</p>
+
+		<p>Eso me obligó a aprender más allá del código: levanto requerimientos
+			directo con las áreas de negocio, defino la arquitectura, escribo el
+			frontend y el backend, y administro el servidor Linux (Dokploy +
+			Traefik) donde todo corre en producción. Si algo se cae a las 11pm,
+			también soy yo quien lo arregla.</p> -->
+	</ContentLayout>
+</PageLayout>

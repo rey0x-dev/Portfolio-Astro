@@ -1,0 +1,28 @@
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/700.css";
+
+*,
+*::before,
+*::after {
+  font-family: "JetBrains Mono", monospace;
+}
+
+:root {
+  --color-black: rgb(30 30 30 / 100%);
+  --color-black-overlay: rgb(23 25 26 / 6%);
+  --color-black-muted: rgb(30 30 30 / 75%);
+  --color-gray: rgb(179 179 179 / 100%);
+  --color-gray-light: rgb(179 179 179 / 20%);
+  --color-white: rgb(236 238 240 / 100%);
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}

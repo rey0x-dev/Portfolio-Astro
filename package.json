@@ -1,0 +1,29 @@
+{
+  "name": "porfolio",
+  "version": "0.0.1",
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "astro": "^7.2.10",
+    "astro-icon": "^1.2.0",
+    "prettier": "3.9.6"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write ."
+  },
+  "type": "module",
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.128",
+    "@iconify-json/openmoji": "^1.2.29",
+    "@iconify-json/tabler": "^1.2.38"
+  }
+}

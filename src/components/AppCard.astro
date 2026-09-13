@@ -1,0 +1,47 @@
+---
+import AppBadge from "./AppBadge.astro";
+
+interface Props {
+    item: {
+        name: string;
+        description: string;
+        items?: string[];
+        link: {
+            url: string;
+            type: 'self' | '_blank'
+        }
+    }
+}
+
+const { item } = Astro.props;
+---
+
+<a href={item.link?.url} target={item.link?.type} class="card link">
+    <p style={{ fontWeight: 'bold' }}>{item.name}</p>
+    <p style={{ whiteSpace: 'pre-line', color: 'var(--color-black-muted)', lineHeight: '1.6rem' }}>{item.description}</p>
+
+    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+        {item.items?.map((i) => <AppBadge label={i} />)}
+    </div>
+</a>
+
+<style>
+    .link {
+		text-decoration: none;
+		color: inherit;
+	}
+
+    .card {
+		padding: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		font-size: 0.875rem;
+		gap: 0.3rem;
+		cursor: pointer;
+	}
+
+    .card:hover {
+		background-color: var(--color-gray-light);
+	}
+</style>

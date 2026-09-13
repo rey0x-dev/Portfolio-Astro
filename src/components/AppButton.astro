@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  label: string;
+  icon?: string;
+  color: 'black' | 'white';
+  href?: string;
+  target?: '_blank' | '_self';
+  download?: boolean;
+}
+
+const { label, icon, color, href, target, download } = Astro.props;
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag data-color={color} href={href} target={target} download={download}>
+  {icon && <Icon name={icon} size={22} />}
+  <p>{ label }</p>
+</Tag>
+
+<style>
+  a, button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a[data-color='black'], button[data-color='black'] {
+    background: black;
+    border: 1px solid var(--color-black);
+    color: white;
+  }
+
+  a[data-color='white'], button[data-color='white'] {
+    background: white;
+    border: 1px solid var(--color-black-muted);
+    color: black;
+  }
+
+  p {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+</style>
+

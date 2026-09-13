@@ -1,0 +1,23 @@
+---
+
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div>
+    <p>{label}</p>
+</div>
+
+<style>
+    div {
+        background-color: var(--color-black-overlay);
+        padding: 0.3rem 0.5rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+</style>

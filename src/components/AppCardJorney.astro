@@ -1,0 +1,57 @@
+---
+import AppBadge from "./AppBadge.astro";
+
+interface Props {
+    jorney: {
+        logo: string;
+        title: string;
+        subtitle: string;
+        description: string;
+        items: string[];
+        link: {
+            url: string;
+            type: 'self' | '_blank'
+        }
+    }
+}
+
+const { jorney } = Astro.props;
+---
+
+<a href={jorney.link?.url} target={jorney.link?.type} class="card">
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', gap: '0.5rem' }}>
+        <img src={jorney.logo} alt={jorney.title} style={{ width: '100px', height: 'auto' }} />
+    </div>
+
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <p style={{ fontWeight: 'bold' }}>{jorney.title}</p>
+            <p style={{ color: 'var(--color-black-muted)', fontSize: '0.825rem' }}>{jorney.subtitle}</p>
+        </div>
+        
+        <p style={{ whiteSpace: 'pre-line', color: 'var(--color-black-muted)', lineHeight: '1.2rem' }}>{jorney.description}</p>
+
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {jorney.items?.map((j: string) => <AppBadge label={j} />)}
+        </div>
+    </div>
+</a>
+
+<style>
+    a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+    .card {
+		padding: 0.5rem;
+		display: flex;
+		font-size: 0.875rem;
+		gap: 2rem;
+		cursor: pointer;
+	}
+
+    .card:hover {
+		background-color: var(--color-gray-light);
+	}
+</style>
